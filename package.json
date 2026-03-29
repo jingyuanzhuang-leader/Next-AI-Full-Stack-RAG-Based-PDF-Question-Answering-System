@@ -7,9 +7,14 @@
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.2",
     "@testing-library/user-event": "^13.5.0",
+    "antd": "^6.3.4",
+    "axios": "^1.14.0",
+    "concurrently": "^9.2.1",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
     "react-scripts": "5.0.1",
+    "react-speech-recognition": "^4.0.1",
+    "speak-tts": "^2.0.8",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
