@@ -1,70 +1,90 @@
-# Getting Started with Create React App
+# Next AI: Full-Stack RAG-Based PDF Question Answering System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+An AI-powered full-stack web application that allows users to upload a PDF document, ask questions based on its content, and interact with the system through both text and voice.
 
-## Available Scripts
+## Overview
 
-In the project directory, you can run:
+This project is a PDF question-answering application built with React on the frontend and Express on the backend. It uses LangChain and OpenAI to process PDF files, retrieve relevant document chunks, and generate context-aware answers. The application also supports speech recognition and text-to-speech with both Chinese and English language options.
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Upload PDF files
+- Ask questions based on the uploaded PDF
+- Multi-turn chat history
+- Display source page numbers for answers
+- Delete current PDF
+- Clear chat history
+- Copy answers
+- Voice input with speech recognition
+- Voice output with text-to-speech
+- Chinese / English voice mode switching
+- Structured frontend and backend architecture
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Tech Stack
 
-### `npm test`
+### Frontend
+- React
+- Ant Design
+- Axios
+- react-speech-recognition
+- speak-tts
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Backend
+- Node.js
+- Express.js
+- Multer
+- dotenv
 
-### `npm run build`
+### AI / RAG
+- LangChain
+- OpenAI API
+- PDFLoader
+- RecursiveCharacterTextSplitter
+- OpenAIEmbeddings
+- MemoryVectorStore
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Project Structure
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```bash
+nextai/
+├── public/
+├── src/
+│   ├── components/
+│   │   ├── PdfUploader.js
+│   │   └── ChatComponent.js
+│   ├── hooks/
+│   │   ├── useChatHistory.js
+│   │   └── useSpeechControls.js
+│   ├── services/
+│   │   └── api.js
+│   ├── utils/
+│   │   └── speech.js
+│   ├── constants/
+│   │   └── config.js
+│   └── App.js
+├── server/
+│   ├── config/
+│   │   └── multerConfig.js
+│   ├── controllers/
+│   │   └── pdfController.js
+│   ├── middlewares/
+│   │   ├── asyncHandler.js
+│   │   ├── errorHandler.js
+│   │   ├── logger.js
+│   │   └── validators.js
+│   ├── routes/
+│   │   └── pdfRoutes.js
+│   ├── services/
+│   │   ├── chatService.js
+│   │   └── fileStateService.js
+│   ├── utils/
+│   │   ├── AppError.js
+│   │   └── pdfHelpers.js
+│   ├── uploads/
+│   ├── .env
+│   ├── package.json
+│   └── server.js
+├── .env
+├── package.json
+├── .gitignore
+└── README.md
